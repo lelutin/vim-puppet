@@ -22,8 +22,13 @@ setlocal commentstring=#\ %s
 
 setlocal formatexpr=puppet#format#Format()
 
+setlocal suffixesadd=.pp
+setlocal include=\\v^\\s*(include\|contain\|class\\s+\\\{\|Class\\s+\\\[)\\s+[\"\']?\\zs(\\f\|::)+
+setlocal includeexpr=puppet#include#IncludeExpr(v:fname)
+
 let b:undo_ftplugin = '
     \ setlocal tabstop< tabstop< softtabstop< shiftwidth< expandtab<
     \| setlocal keywordprg< iskeyword< comments< commentstring<
     \| setlocal formatexpr<
+    \| setlocal suffixesadd< include< includeexpr<
     \'
