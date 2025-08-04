@@ -108,6 +108,7 @@ Given puppet (empty line in string):
   }
 
 Do (full text indent with '='):
+  :syntax sync fromstart
   gg=G
 
 Expect puppet (indentation shouldn't move):
@@ -130,6 +131,7 @@ Given puppet (line in string with only spaces):
   }
 
 Do (full text indent with '='):
+  :syntax sync fromstart
   gg=G
 
 Expect puppet (spaces within string should remain there):
@@ -150,6 +152,7 @@ Given puppet (line in heredoc with only spaces):
   }
 
 Do (full text indent with '='):
+  :syntax sync fromstart
   gg=G
 
 Expect puppet (spaces within string should remain there):
