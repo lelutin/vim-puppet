@@ -79,6 +79,7 @@ Given puppet (empty line in heredoc):
   }
 
 Do (full text indent with '='):
+  :syntax sync fromstart
   gg=G
 
 Expect puppet (indentation shouldn't move):
